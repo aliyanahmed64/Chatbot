@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | ChatAI Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #4a6cf7;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4a6cf7;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #4a6cf7 0%, #7535dc 100%);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .about-section {
+            padding: 80px 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .team-section {
+            background-color: #ffffff;
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .team-member {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-img {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .member-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .member-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .member-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .values-section {
+            padding: 80px 0;
+            background-color: #f5f7fa;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .value-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #eef1ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: #4a6cf7;
+            font-size: 24px;
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .value-card p {
+            color: #666;
+        }
+
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .footer-column p,
+        .footer-column a {
+            color: #aaa;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #4a6cf7;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            text-align: center;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            border-radius: 50%;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #4a6cf7;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">ChatAI</a>
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#" class="active">About</a>
+                <a href="#">Features</a>
+                <a href="#">Pricing</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>About ChatAI</h1>
+            <p>Powering meaningful conversations through artificial intelligence</p>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container about-grid">
+            <div class="about-image">
+                <img src="/api/placeholder/600/400" alt="placeholder">
+            </div>
+            <div class="about-content">
+                <h2>Our Story</h2>
+                <p>Founded in 2023, ChatAI began with a simple mission: to make artificial intelligence accessible,
+                    helpful, and human-centered. We believe that AI should enhance human capabilities, not replace them.
+                </p>
+                <p>Our team of AI researchers, engineers, and designers have worked tirelessly to develop a
+                    conversational AI that understands context, learns from interactions, and provides meaningful
+                    assistance across a wide range of tasks.</p>
+                <p>Today, ChatAI serves thousands of users worldwide, from individuals seeking everyday assistance to
+                    businesses looking to streamline customer support and internal operations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Team</h2>
+                <p>The brilliant minds behind ChatAI's technology and vision</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="/api/placeholder/400/400" alt="placeholder">
+                    </div>
+                    <div class="member-info">
+                        <h3>Sarah Johnson</h3>
+                        <p>Founder & CEO</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="/api/placeholder/400/400" alt="placeholder">
+                    </div>
+                    <div class="member-info">
+                        <h3>David Chen</h3>
+                        <p>Chief Technology Officer</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="/api/placeholder/400/400" alt="placeholder">
+                    </div>
+                    <div class="member-info">
+                        <h3>Maria Rodriguez</h3>
+                        <p>Lead AI Researcher</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="/api/placeholder/400/400" alt="placeholder">
+                    </div>
+                    <div class="member-info">
+                        <h3>James Wilson</h3>
+                        <p>UX Design Director</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide our work and innovation</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">★</div>
+                    <h3>Human-Centered AI</h3>
+                    <p>We design AI that complements human intelligence and adapts to human needs, making technology
+                        more accessible and beneficial for everyone.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">✓</div>
+                    <h3>Trust & Transparency</h3>
+                    <p>We believe in being transparent about how our AI works, the data it uses, and the limitations it
+                        has. Trust is fundamental to our relationship with users.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">⟳</div>
+                    <h3>Continuous Learning</h3>
+                    <p>Just like our AI, we're committed to continuous improvement, learning from feedback, and evolving
+                        to meet changing needs and challenges.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">♥</div>
+                    <h3>Responsible Innovation</h3>
+                    <p>We prioritize ethical considerations in our development process, ensuring our technology respects
+                        privacy, reduces bias, and promotes positive social impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ChatAI</h3>
+                    <p>Making AI accessible, helpful, and human-centered for everyone.</p>
+                    <div class="social-links">
+                        <a href="#">T</a>
+                        <a href="#">F</a>
+                        <a href="#">L</a>
+                        <a href="#">I</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Features</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <a href="#">Documentation</a>
+                    <a href="#">API Reference</a>
+                    <a href="#">Tutorials</a>
+                    <a href="#">Case Studies</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>123 AI Avenue, Tech City</p>
+                    <p>contact@chatai.com</p>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ChatAI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
